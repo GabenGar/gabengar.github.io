@@ -1,3 +1,4 @@
 [submodule "todos"]
 	path = todos
 	url = https://github.com/GabenGar/todos.git
+	branch = master
