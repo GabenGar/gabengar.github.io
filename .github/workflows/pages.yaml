@@ -34,6 +34,7 @@ jobs:
         with:
           node-version: "20"
           cache: npm
+          cache-dependency-path: "./todos"
 
       - name: Setup Pages
         id: setup_pages
@@ -49,10 +50,12 @@ jobs:
               ${{ runner.os }}-turbo-
 
       - name: Install dependencies
-        run: "cd ./todos && npm ci"
+        working-directory: "./todos"
+        run: "npm ci"
 
       - name: Build pages
-        run: "cd ./todos && npm run build-frontend"
+        working-directory: "./todos"
+        run: "npm run build-frontend"
         env:
           NEXT_PUBLIC_SITE_BASE_URL: ${{ steps.setup_pages.outputs.base_path }}
           NEXT_PUBLIC_IS_SERVICE_WORKER_ENABLED: ${{ vars.NEXT_PUBLIC_IS_SERVICE_WORKER_ENABLED }}
