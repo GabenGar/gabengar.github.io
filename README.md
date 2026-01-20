@@ -15,6 +15,13 @@ git submodule update --init --recursive
 git submodule update --remote
 ```
 
+### Fetching
+
+Fetch the latest remotes on all submodules:
+```sh
+git fetch --all --prune --recurse-submodules=yes
+```
+
 ### Pushing
 
 Fail if any of the submodules aren't pushed:
