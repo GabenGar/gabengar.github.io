@@ -12,7 +12,7 @@
 2. Build pages:
    ```sh
    cd todos
-   npx turborepo run prune frontend
+   npx turbo prune frontend
    cd out
    npm ci
    npm run build-frontend
@@ -38,7 +38,7 @@ The output will be in `./todos/out/apps/frontend/out`.
    ```ini
    [core]
        ...
-       sshCommand = ssh -i <ssh_key_path> -F /dev/null
+       sshCommand = ssh -o IdentitiesOnly=yes -i <ssh_key_path> -F /dev/null
    ```
 
 4. Set the SSH push url on the origin remote:
